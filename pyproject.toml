@@ -1,0 +1,32 @@
+[project]
+name = "xaigrouping"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "einops>=0.8.2",
+    "ipykernel>=7.2.0",
+    "jsonargparse>=4.47.0",
+    "matplotlib>=3.10.8",
+    "nvidia-ml-py>=13.595.45",
+    "pyyaml>=6.0.3",
+    "timm>=1.0.25",
+    "torch==2.7.0",
+    "torchinfo>=1.8.0",
+    "torchvision==0.22.0",
+    "tqdm>=4.67.3",
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'linux'" },
+]
+torchvision = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
